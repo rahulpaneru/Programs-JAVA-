@@ -1,0 +1,49 @@
+import java.util.*;
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Enter the Size of Array and how much time to move");
+		Scanner s= new Scanner(System.in);
+		int size=s.nextInt();
+		int ktime=s.nextInt();
+		int kktime=ktime;
+		int arr[]=new int[100];
+		int temp[]=new int[100];
+		int i;
+		//storing element
+		for(i=0;i<size;i++)
+		{
+		    arr[i]=s.nextInt();
+		}
+		//Store ktime element in array
+		int newindex=size-ktime;
+		int j=0;
+	    while(newindex<size)
+	    {
+            temp[newindex]=arr[j];
+            newindex++;
+            j++;
+	    }
+		//movement of element to left
+		while(kktime>0)
+		{
+	    for(i=0;i<size-1;i++)
+	    {
+	       arr[i]=arr[i+1];
+	    }
+	    kktime--;
+		}
+	    //merging both temp array element and arr element array
+		int nsize=size-ktime;
+		for(i=nsize;i<size;i++)
+		{
+		    arr[i]=temp[nsize++];
+		}
+	    for(i=0;i<size;i++)
+		{
+		    System.out.println(arr[i]);
+		}
+		
+	}
+}
