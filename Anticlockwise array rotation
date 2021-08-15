@@ -16,7 +16,7 @@ public class Main
 		{
 		    arr[i]=s.nextInt();
 		}
-		//Store ktime element in array
+		//Store ktime element in array TEMP
 		int newindex=size-ktime;
 		int j=0;
 	    while(newindex<size)
